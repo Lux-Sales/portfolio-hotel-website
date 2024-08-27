@@ -16,6 +16,7 @@ const Topbar = (): JSX.Element => {
   return (
     <Container>
       <img
+        data-testid="topbar-logo"
         src={Logo}
         alt="A orange rectangle with the border rounded, big letters says 'Luxury' and minor stands for 'hotels'"
       />

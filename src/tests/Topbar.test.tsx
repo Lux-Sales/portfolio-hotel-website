@@ -1,4 +1,3 @@
-// sum.test.js
 import { expect, test } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
@@ -8,8 +7,8 @@ test("Hotel Logo", () => {
   const router = createMemoryRouter(routesConfig, {
     initialEntries: ["/"],
   });
-  const { getByRole } = render(<RouterProvider router={router} />);
-  expect(getByRole("img"));
+  const { getByTestId } = render(<RouterProvider router={router} />);
+  expect(getByTestId("topbar-logo"));
 });
 
 test("Redirect buttons", () => {

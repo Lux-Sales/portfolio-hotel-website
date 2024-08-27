@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Topbar from "@/components/Topbar";
 import Contact from "@/pages/Contact";
 import Facilities from "@/pages/Facilities";
@@ -12,6 +13,7 @@ const routesConfig = [
       <>
         <Topbar />
         <Outlet />
+        <Footer />
       </>
     ),
     errorElement: <Home />,
