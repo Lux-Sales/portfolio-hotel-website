@@ -80,8 +80,10 @@ test("Footer newsletter function", async () => {
   const button = getByTestId("footer-newsletter-button");
   const input = getByTestId("footer-newsletter-input");
 
-  await userEvent.type(input, mockEmail);
-  await fireEvent.click(button);
+  await act(async () => {
+    await userEvent.type(input, mockEmail);
+    fireEvent.click(button);
+  });
 
   expect(input).toHaveValue(mockEmail);
   expect(consoleMock).toHaveBeenCalledWith("subscribed");

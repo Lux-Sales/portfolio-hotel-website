@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Address, Container, NewsLetter, RedirectDiv } from "./styles";
 import logo from "@/assets/footerLogo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { SubscribeToNewsLetter } from "@/services/newsletter";
-const Footer = (): JSX.Element => {
-  const [email, setEmail] = useState("");
+import { Field, ErrorMessage, Formik, Form, FormikValues } from "formik";
+import * as yup from "yup";
 
-  const submitSub = async (): Promise<void> => {
+const Footer = (): JSX.Element => {
+  const validationSchema = yup.object().shape({
+    email: yup.string().email("Invalid email").required("Email is required"),
+  });
+
+  const submitSub = async (formValues: FormikValues): Promise<void> => {
     try {
-      const resp = await SubscribeToNewsLetter(email);
+      const resp = await SubscribeToNewsLetter(formValues.email);
       console.log(resp.data.status);
     } catch (e) {
-      console.error(e);
+      console.error("error", e);
     }
   };
 
@@ -61,17 +66,23 @@ const Footer = (): JSX.Element => {
         </div>
       </RedirectDiv>
       <NewsLetter data-testid="footer-newsletter-div">
-        <input
-          data-testid="footer-newsletter-input"
-          type="text"
-          onChange={e => setEmail(e.target.value)}
-        />
-        <button
-          data-testid="footer-newsletter-button"
-          onClick={async () => await submitSub()}
+        <Formik
+          initialValues={{ email: "" }}
+          validationSchema={validationSchema}
+          onSubmit={submitSub}
         >
-          aaa
-        </button>
+          <Form>
+            <Field
+              data-testid="footer-newsletter-input"
+              type="email"
+              name="email"
+            />
+            <ErrorMessage name="email" />
+            <button type="submit" data-testid="footer-newsletter-button">
+              aaa
+            </button>
+          </Form>
+        </Formik>
       </NewsLetter>
     </Container>
   );
