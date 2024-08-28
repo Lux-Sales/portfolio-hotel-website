@@ -34,35 +34,39 @@ const Footer = (): JSX.Element => {
         </p>
       </Address>
       <RedirectDiv>
-        <Link data-testid="footer-redirect-link-about" to="about">
-          About Us
-        </Link>
-        <Link data-testid="footer-redirect-link-contact" to="contact">
-          Contact
-        </Link>
-        <Link data-testid="footer-redirect-link-terms" to="terms">
-          Terms & Conditions
-        </Link>
-        <div
-          data-testid="footer-social-media-link-facebook"
-          onClick={() => (window.location.href = "www.facebook.com")}
-        >
-          <FacebookIcon />
-          Facebook
+        <div className="redirect-column">
+          <Link data-testid="footer-redirect-link-about" to="about">
+            About Us
+          </Link>
+          <Link data-testid="footer-redirect-link-contact" to="contact">
+            Contact
+          </Link>
+          <Link data-testid="footer-redirect-link-terms" to="terms">
+            Terms & Conditions
+          </Link>
         </div>
-        <div
-          data-testid="footer-social-media-link-twitter"
-          onClick={() => (window.location.href = "www.twitter.com")}
-        >
-          <TwitterIcon />
-          Twitter
-        </div>
-        <div
-          data-testid="footer-social-media-link-instagram"
-          onClick={() => (window.location.href = "www.instagram.com")}
-        >
-          <InstagramIcon />
-          Instagram
+        <div className="redirect-column">
+          <div
+            data-testid="footer-social-media-link-facebook"
+            onClick={() => (window.location.href = "www.facebook.com")}
+          >
+            <FacebookIcon />
+            Facebook
+          </div>
+          <div
+            data-testid="footer-social-media-link-twitter"
+            onClick={() => (window.location.href = "www.twitter.com")}
+          >
+            <TwitterIcon />
+            Twitter
+          </div>
+          <div
+            data-testid="footer-social-media-link-instagram"
+            onClick={() => (window.location.href = "www.instagram.com")}
+          >
+            <InstagramIcon />
+            Instagram
+          </div>
         </div>
       </RedirectDiv>
       <NewsLetter data-testid="footer-newsletter-div">
@@ -71,17 +75,26 @@ const Footer = (): JSX.Element => {
           validationSchema={validationSchema}
           onSubmit={submitSub}
         >
-          <Form>
-            <Field
-              data-testid="footer-newsletter-input"
-              type="email"
-              name="email"
-            />
-            <ErrorMessage name="email" />
-            <button type="submit" data-testid="footer-newsletter-button">
-              aaa
-            </button>
-          </Form>
+          {({ errors, touched }) => (
+            <Form>
+              <label htmlFor="">Subscribe to our newsletter</label>
+              <div>
+                <Field
+                  data-testid="footer-newsletter-input"
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  style={errors.email == null ? {} : { borderColor: "red" }}
+                />
+                <button type="submit" data-testid="footer-newsletter-button">
+                  OK
+                </button>
+              </div>
+              <span className="error-message">
+                <ErrorMessage name="email" />
+              </span>
+            </Form>
+          )}
         </Formik>
       </NewsLetter>
     </Container>
