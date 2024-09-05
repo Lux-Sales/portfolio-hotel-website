@@ -23,6 +23,11 @@ export const Container = styled.footer`
 `;
 
 export const Address = styled.div`
+  img {
+    height: 30%;
+    width: 50%;
+    margin-left: -5%;
+  }
   p {
     width: 100%;
     margin-top: 4%;
@@ -48,6 +53,11 @@ export const RedirectDiv = styled.div`
   .redirect-column {
     flex-direction: column;
     justify-content: space-around;
+    div {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
     &:nth-child(2) {
       margin-left: auto;
       align-items: left;
@@ -57,6 +67,7 @@ export const RedirectDiv = styled.div`
         }
       }
       svg {
+        width: 20%;
         margin-right: 10%;
       }
     }
@@ -64,34 +75,47 @@ export const RedirectDiv = styled.div`
 `;
 
 export const NewsLetter = styled.div`
+  height: 100%;
   label {
     color: #fff;
     font-weight: 500;
   }
-  div {
-    margin-top: 10%;
-    display: flex;
-    input {
-      border-radius: 4px 0 0 4px;
-      border-color: #e0b973;
-      border-width: 2px;
-      background-color: transparent;
-      padding-left: 5%;
-      width: 80%;
+  form {
+    height: 100%;
+  }
+`;
+
+export const EmailInput = styled.div`
+  margin-top: 10%;
+  display: flex;
+  width: 100%;
+  height: 40%;
+  border-width: 0.2vw;
+  border-style: solid;
+  border-radius: 0.2vw;
+  border-color: #e0b973;
+  input {
+    border: none;
+    height: 100%;
+    width: 80%;
+    background-color: transparent;
+    padding-left: 5%;
+    color: #fff;
+    font-size: 100%;
+    &::placeholder {
       color: #fff;
-      &::placeholder {
-        color: #fff;
-        font-weight: 500;
-      }
+      font-weight: bold;
     }
-    button {
-      border-radius: 0 4px 4px 0;
-      background-color: #e0b973;
-      color: #14274a;
-      font-weight: 700;
-      border-color: #e0b973;
-      width: 20%;
-      padding: 2%;
-    }
+  }
+  button {
+    height: 100%;
+    font-size: 90%;
+    border: none;
+    background-color: #e0b973;
+    color: #14274a;
+    font-weight: 700;
+    width: 20%;
+    padding: 2%;
+    border: none;
   }
 `;

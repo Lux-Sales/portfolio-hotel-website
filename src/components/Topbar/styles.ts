@@ -9,6 +9,7 @@ export const ButtonsNav = styled.div`
   background-color: transparent;
   justify-content: flex-end;
   a {
+    font-size: 1.2vw;
     color: #ffffff;
     margin: 0 10%;
     text-decoration: none;

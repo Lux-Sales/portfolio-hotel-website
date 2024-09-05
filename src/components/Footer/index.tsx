@@ -1,5 +1,11 @@
 import React from "react";
-import { Address, Container, NewsLetter, RedirectDiv } from "./styles";
+import {
+  Address,
+  Container,
+  EmailInput,
+  NewsLetter,
+  RedirectDiv,
+} from "./styles";
 import logo from "@/assets/footerLogo.svg";
 import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -78,18 +84,19 @@ const Footer = (): JSX.Element => {
           {({ errors, touched }) => (
             <Form>
               <label htmlFor="">Subscribe to our newsletter</label>
-              <div>
+              <EmailInput
+                style={errors.email == null ? {} : { borderColor: "red" }}
+              >
                 <Field
                   data-testid="footer-newsletter-input"
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  style={errors.email == null ? {} : { borderColor: "red" }}
                 />
                 <button type="submit" data-testid="footer-newsletter-button">
                   OK
                 </button>
-              </div>
+              </EmailInput>
               <span className="error-message">
                 <ErrorMessage name="email" />
               </span>
