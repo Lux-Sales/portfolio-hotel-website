@@ -4,9 +4,8 @@ import Logo from "@/assets/hotelLogo.svg";
 import { Link } from "react-router-dom";
 
 const handleStyle = (href: string): object => {
-  console.log(window.location.pathname);
   if (href === window.location.pathname) {
-    return { textDecoration: "underline", fontWeight: "500" };
+    return { textDecoration: "underline", fontWeight: "700" };
   } else {
     return {};
   }

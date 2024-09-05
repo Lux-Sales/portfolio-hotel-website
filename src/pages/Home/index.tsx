@@ -1,7 +1,8 @@
+import Banner from "@/components/Banner";
 import React from "react";
 
 const Home = (): JSX.Element => {
-  return <div>Happy hacking!</div>;
+  return <Banner />;
 };
 
 export default Home;

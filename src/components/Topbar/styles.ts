@@ -1,28 +1,31 @@
 import styled from "styled-components";
 
 export const ButtonsNav = styled.div`
-  display: flex;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: 0;
+  width: 35vw;
+  position: relative;
+  left: 90%;
   white-space: nowrap;
-  background-color: transparent;
-  justify-content: flex-end;
   a {
     font-size: 1.2vw;
     color: #ffffff;
-    margin: 0 10%;
+    margin: 0 5%;
     text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
 export const Container = styled.div`
-  background-color: black;
+  background-color: transparent;
   padding: 0 5%;
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 0;
   img {
-    height: 15%;
-    width: 15%;
+    position: relative;
+    height: 10vh;
+    width: 10vw;
   }
 `;
