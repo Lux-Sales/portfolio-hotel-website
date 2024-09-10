@@ -7,7 +7,7 @@ export const Container = styled.footer`
   background-position: center;
   background-size: cover;
   width: 100%;
-  padding: 8% 12% 5% 12%;
+  padding: 8% 12% 2% 12%;
   color: #fff;
   display: grid;
   grid-template-columns: 25% 40% 25%;
