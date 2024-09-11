@@ -1,17 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, ButtonsNav } from "./styles";
 import Logo from "@/assets/hotelLogo.svg";
 import { Link } from "react-router-dom";
 
-const handleStyle = (href: string): object => {
-  if (href === window.location.pathname) {
-    return { textDecoration: "underline", fontWeight: "700" };
-  } else {
-    return {};
-  }
-};
-
 const Topbar = (): JSX.Element => {
+  const [selected, setSelected] = useState("/");
   return (
     <Container>
       <img
@@ -20,16 +13,32 @@ const Topbar = (): JSX.Element => {
         alt="A orange rectangle with the border rounded, big letters says 'Luxury' and minor stands for 'hotels'"
       />
       <ButtonsNav>
-        <Link to="" style={handleStyle("/")}>
+        <Link
+          className={selected === "/" ? "activeLink" : ""}
+          to="/"
+          onClick={() => setSelected("/")}
+        >
           Home
         </Link>
-        <Link to="facilities" style={handleStyle("/facilities")}>
+        <Link
+          className={selected === "facilities" ? "activeLink" : ""}
+          to="facilities"
+          onClick={() => setSelected("facilities")}
+        >
           Facilities
         </Link>
-        <Link to="rooms" style={handleStyle("/rooms")}>
+        <Link
+          className={selected === "rooms" ? "activeLink" : ""}
+          to="rooms"
+          onClick={() => setSelected("rooms")}
+        >
           Rooms
         </Link>
-        <Link to="contact" style={handleStyle("/contact")}>
+        <Link
+          className={selected === "contact" ? "activeLink" : ""}
+          to="contact"
+          onClick={() => setSelected("contact")}
+        >
           Contact-us
         </Link>
       </ButtonsNav>

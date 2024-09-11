@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ActionButtons, Container } from "./styles";
-import {
-  getTestimonials,
-  mockedTestimonials,
-  Testimonial,
-} from "@/services/testimonials";
-import Button from "../Button";
+import { mockedTestimonials, Testimonial } from "@/services/testimonials";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 

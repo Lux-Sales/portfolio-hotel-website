@@ -8,7 +8,7 @@ export default createGlobalStyle`
   outline: 0;
   list-style-type: none;
   background-size: cover;
-  
+  font-size: 1.2vw;
 }
 body, input, button{
   font-family: "Montserrat", sans-serif;

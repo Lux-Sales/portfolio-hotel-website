@@ -14,6 +14,10 @@ export const ButtonsNav = styled.div`
       text-decoration: underline;
     }
   }
+  .activeLink {
+    text-decoration: underline;
+    font-weight: 700;
+  }
 `;
 
 export const Container = styled.div`
