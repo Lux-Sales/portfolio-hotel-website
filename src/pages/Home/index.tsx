@@ -10,6 +10,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@/components/Button";
 import roomPhoto from "@/assets/roomPhoto.svg";
+import Testimonials from "@/components/Testimonials";
 
 const Home = (): JSX.Element => {
   const navigate = useNavigate();
@@ -51,6 +52,7 @@ const Home = (): JSX.Element => {
           <img src={roomPhoto} alt="" />
         </Attraction>
       </AttractionsList>
+      <Testimonials />
     </Container>
   );
 };
