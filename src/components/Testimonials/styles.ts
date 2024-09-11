@@ -5,9 +5,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   color: #14274a;
+  h1 {
+    font-weight: 700;
+    font-size: 2vw;
+  }
   span {
+    font-weight: 500;
     &:nth-child(2) {
-      margin: 1% 0;
+      margin: 2.5% 0;
     }
   }
 `;

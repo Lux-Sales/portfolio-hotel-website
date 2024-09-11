@@ -41,7 +41,7 @@ export const mockedTestimonials: Testimonial[] = [
     user: "Mr. Moacir",
     location: "Brazil",
     testimonial:
-      "Gostei bastante, só faltou churrasco! (This user didn't know how to speak english",
+      "Gostei bastante, só faltou churrasco! (This user didn't know how to speak english)",
   },
 ];
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useState } from "react";
 import { ActionButtons, Container } from "./styles";
 import { mockedTestimonials, Testimonial } from "@/services/testimonials";
@@ -21,7 +22,7 @@ const Testimonials = (): JSX.Element => {
   };
 
   const handleNext = (): void => {
-    setCounter(counter === testimonials.length ? counter : counter + 1);
+    setCounter(counter === testimonials.length - 1 ? 0 : counter + 1);
   };
 
   const [testimonials, setTestimonials] =
@@ -32,7 +33,7 @@ const Testimonials = (): JSX.Element => {
   return (
     <Container>
       <h1>Testimonials</h1>
-      <span>{testimonials[counter].testimonial}</span>
+      <span>"{testimonials[counter].testimonial}"</span>
       <span data-testid="testimonial-text">
         {testimonials[counter].user}, {testimonials[counter].location}
       </span>

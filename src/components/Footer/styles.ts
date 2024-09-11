@@ -12,7 +12,9 @@ export const Container = styled.footer`
   display: grid;
   grid-template-columns: 25% 40% 25%;
   gap: 5%;
-  font-size: 1vw;
+  * {
+    font-size: 0.8vw;
+  }
   .error-message {
     color: #f73737;
     font-weight: 500;
@@ -35,9 +37,9 @@ export const Address = styled.div`
 export const RedirectDiv = styled.div`
   display: flex;
   a {
+    font-weight: 600;
     text-decoration: none;
     color: #fff;
-    font-weight: 500;
     &:hover {
       text-decoration: underline;
     }
