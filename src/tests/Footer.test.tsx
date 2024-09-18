@@ -3,9 +3,14 @@ import { act, fireEvent, render } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import routesConfig from "@/routes";
+import NewsletterApi from "@/services/newsletter";
 
 const router = createMemoryRouter(routesConfig, {
   initialEntries: ["/"],
+});
+
+afterEach(() => {
+  vi.clearAllMocks();
 });
 
 test("Footer Hotel address", () => {
@@ -72,7 +77,7 @@ test("Footer newsletter", () => {
 });
 
 test("Footer newsletter function", async () => {
-  const consoleMock = vi.spyOn(console, "log");
+  const subscribeMock = vi.spyOn(NewsletterApi, "SubscribeToNewsLetter");
 
   const { getByTestId } = render(<RouterProvider router={router} />);
   const mockEmail = "someemail@gmail.com";
@@ -86,5 +91,5 @@ test("Footer newsletter function", async () => {
   });
 
   expect(input).toHaveValue(mockEmail);
-  expect(consoleMock).toHaveBeenCalledWith("subscribed");
+  expect(subscribeMock).toHaveBeenCalled();
 });

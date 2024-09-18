@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { SubscribeToNewsLetter } from "@/services/newsletter";
+import NewsletterApi from "@/services/newsletter";
 import { Field, ErrorMessage, Formik, Form, FormikValues } from "formik";
 import * as yup from "yup";
 
@@ -22,7 +22,7 @@ const Footer = (): JSX.Element => {
 
   const submitSub = async (formValues: FormikValues): Promise<void> => {
     try {
-      const resp = await SubscribeToNewsLetter(formValues.email);
+      const resp = await NewsletterApi.SubscribeToNewsLetter(formValues.email);
       console.log(resp.data.status);
     } catch (e) {
       console.error("error", e);

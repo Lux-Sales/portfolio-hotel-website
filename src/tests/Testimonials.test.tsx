@@ -1,19 +1,17 @@
 import { expect, test } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import Testimonials from "@/components/Testimonials";
-import React from "react";
+import TestimonialApi from "@/services/testimonials";
 
-test("Request made", async () => {
-  const spy = vi.spyOn(console, "log");
-  await render(<Testimonials />);
-  expect(spy).toHaveBeenCalledWith("testimonials fetched");
+afterEach(() => {
+  vi.clearAllMocks();
 });
 
-// test("Request made", async () => {
-//   const spy = vi.spyOn(React, "useEffect");
-//   await render(<Testimonials />);
-//   expect(spy).toHaveBeenCalled();
-// });
+test("Request made", async () => {
+  const spy = vi.spyOn(TestimonialApi, "getTestimonials");
+  await render(<Testimonials />);
+  expect(spy).toHaveBeenCalled();
+});
 
 test("Changing message", async () => {
   const { getByTestId } = render(<Testimonials />);

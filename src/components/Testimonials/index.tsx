@@ -1,20 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useState } from "react";
 import { ActionButtons, Container } from "./styles";
-import { mockedTestimonials, Testimonial } from "@/services/testimonials";
+import TestimonialApi, {
+  mockedTestimonials,
+  Testimonial,
+} from "@/services/testimonials";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const Testimonials = (): JSX.Element => {
   useEffect(() => {
-    console.log("testimonials fetched");
-    //   getTestimonials()
-    //     .then(testimonials_ => {
-    //       setTestimonials(testimonials_);
-    //     })
-    //     .catch(err => {
-    //       console.error(err);
-    //     });
+    TestimonialApi.getTestimonials()
+      .then(testimonials_ => {
+        setTestimonials(testimonials_);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }, []);
 
   const handlePrevious = (): void => {

@@ -12,7 +12,7 @@ interface MockedAxiosResponse {
   request: object;
 }
 
-export const SubscribeToNewsLetter = async (
+const SubscribeToNewsLetter = async (
   email: string,
 ): Promise<MockedAxiosResponse> => {
   // const response = await api.post("/subscribe", email);
@@ -28,3 +28,9 @@ export const SubscribeToNewsLetter = async (
   };
   return mockedResponse;
 };
+
+const NewsletterApi = {
+  SubscribeToNewsLetter,
+};
+
+export default NewsletterApi;

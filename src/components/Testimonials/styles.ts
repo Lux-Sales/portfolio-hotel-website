@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   color: #14274a;
+  width: 100%;
   h1 {
     font-weight: 700;
     font-size: 2vw;
@@ -12,7 +13,7 @@ export const Container = styled.div`
   span {
     font-weight: 500;
     &:nth-child(2) {
-      margin: 2.5% 0;
+      margin: 1.2% 0;
     }
   }
 `;

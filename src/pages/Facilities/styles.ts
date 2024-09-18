@@ -7,6 +7,9 @@ export const Container = styled.div`
   align-items: center;
   color: #14274a;
   margin-top: 3%;
+  h1 {
+    font-size: 3vw;
+  }
   p {
     width: 80%;
     text-align: center;

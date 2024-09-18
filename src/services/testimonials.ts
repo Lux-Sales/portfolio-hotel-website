@@ -45,7 +45,7 @@ export const mockedTestimonials: Testimonial[] = [
   },
 ];
 
-export const getTestimonials = async (): Promise<Testimonial[]> => {
+const getTestimonials = async (): Promise<Testimonial[]> => {
   // const response = await api.get("/testimonials");
   const mockedResponse: MockedAxiosResponse = {
     data: mockedTestimonials,
@@ -57,3 +57,9 @@ export const getTestimonials = async (): Promise<Testimonial[]> => {
   };
   return mockedResponse.data;
 };
+
+const TestimonialApi = {
+  getTestimonials,
+};
+
+export default TestimonialApi;

@@ -9,7 +9,7 @@ import poolPhoto from "@/assets/poolPhoto.svg";
 import restaurantPhoto from "@/assets/restaurantPhoto.svg";
 import laundryPhoto from "@/assets/laundryPhoto.svg";
 
-const index = (): JSX.Element => {
+const Facilities = (): JSX.Element => {
   return (
     <>
       <Banner />
@@ -54,4 +54,4 @@ const index = (): JSX.Element => {
   );
 };
 
-export default index;
+export default Facilities;
