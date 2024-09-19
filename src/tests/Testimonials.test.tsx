@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import Testimonials from "@/components/Testimonials";
 import TestimonialApi from "@/services/testimonials";
 
@@ -19,11 +19,13 @@ test("Changing message", async () => {
   const fwdButton = getByTestId("forward-button");
   const backButton = getByTestId("back-button");
 
-  await fireEvent.click(fwdButton);
-  const secondMessage = getByTestId("testimonial-text").textContent;
-  expect(firstMessage).not.toBe(secondMessage);
+  await waitFor(async () => {
+    fireEvent.click(fwdButton);
+    const secondMessage = getByTestId("testimonial-text").textContent;
+    expect(firstMessage).not.toBe(secondMessage);
 
-  await fireEvent.click(backButton);
-  const thirdMessage = getByTestId("testimonial-text").textContent;
-  expect(firstMessage).toBe(thirdMessage);
+    fireEvent.click(backButton);
+    const thirdMessage = getByTestId("testimonial-text").textContent;
+    expect(firstMessage).toBe(thirdMessage);
+  });
 });

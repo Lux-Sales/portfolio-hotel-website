@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { act, fireEvent, render } from "@testing-library/react";
+import { act, fireEvent, render, waitFor } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import routesConfig from "@/routes";
@@ -85,9 +85,9 @@ test("Footer newsletter function", async () => {
   const button = getByTestId("footer-newsletter-button");
   const input = getByTestId("footer-newsletter-input");
 
-  await act(async () => {
+  await waitFor(async () => {
     await userEvent.type(input, mockEmail);
-    fireEvent.click(button);
+    await fireEvent.click(button);
   });
 
   expect(input).toHaveValue(mockEmail);
