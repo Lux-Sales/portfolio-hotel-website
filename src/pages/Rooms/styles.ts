@@ -15,10 +15,19 @@ export const Container = styled.div`
     text-align: center;
     margin: 3% 0;
   }
+
+  @media only screen and (min-width: 1281px) {
+    h1 {
+      font-size: 2vw;
+    }
+    p {
+      font-size: 0.9vw;
+    }
+  }
 `;
 
 export const RoomList = styled.ul`
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,5 +36,9 @@ export const RoomList = styled.ul`
     &:nth-child(2) {
       margin: 5% 0;
     }
+  }
+
+  @media only screen and (min-width: 1281px) {
+    width: 50%;
   }
 `;

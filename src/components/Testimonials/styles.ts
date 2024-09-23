@@ -16,6 +16,14 @@ export const Container = styled.div`
       margin: 1.2% 0;
     }
   }
+  @media only screen and (min-width: 1281px) {
+    h1 {
+      font-size: 1.5vw;
+    }
+    span {
+      font-size: 1vw;
+    }
+  }
 `;
 export const ActionButtons = styled.div`
   display: flex;

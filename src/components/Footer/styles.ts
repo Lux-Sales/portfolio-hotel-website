@@ -19,6 +19,15 @@ export const Container = styled.footer`
     color: #f73737;
     font-weight: 500;
   }
+
+  @media only screen and (min-width: 1281px) {
+    padding: 4% 12% 1% 12%;
+    background-position: 0rem 0rem;
+    background-size: cover;
+    * {
+      font-size: 0.5vw;
+    }
+  }
 `;
 
 export const Address = styled.div`
@@ -81,6 +90,11 @@ export const NewsLetter = styled.div`
   }
   form {
     height: 100%;
+  }
+  @media only screen and (min-width: 1281px) {
+    label {
+      font-size: 0.7vw;
+    }
   }
 `;
 

@@ -18,6 +18,11 @@ export const ButtonsNav = styled.div`
     text-decoration: underline;
     font-weight: 700;
   }
+  @media only screen and (min-width: 1281px) {
+    a {
+      font-size: 0.8vw;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -28,6 +33,7 @@ export const Container = styled.div`
   position: absolute;
   top: 0;
   img {
+    margin-top: -2%;
     position: relative;
     height: 10vh;
     width: 10vw;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 80vw;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -14,16 +14,20 @@ export const Title = styled.span`
   background-color: #14274a;
   color: #fff;
   text-align: center;
-  font-size: 3vw;
+  font-size: 2vw;
   text-transform: uppercase;
   font-weight: bold;
   padding: 1% 0;
+
+  @media only screen and (min-width: 1281px) {
+    font-size: 1vw;
+  }
 `;
 
 export const ImageCarousel = styled.div`
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 60vh;
 
   img {
     object-fit: cover;
@@ -61,6 +65,12 @@ export const BulletButtons = styled.div`
     height: 2vh;
     border-radius: 50%;
   }
+  @media only screen and (min-width: 1281px) {
+    span {
+      width: 0.7vw;
+      height: 1.4vh;
+    }
+  }
 `;
 
 export const RoomDetails = styled.div`
@@ -72,7 +82,7 @@ export const RoomDetails = styled.div`
     box-shadow: none;
     ul {
       li {
-        list-style-type: circle !important;
+        list-style-type: circle;
       }
     }
   }
@@ -90,6 +100,11 @@ export const RoomDetails = styled.div`
         height: 7%;
         width: 7%;
       }
+    }
+  }
+  @media only screen and (min-width: 1281px) {
+    * {
+      font-size: 0.65vw;
     }
   }
 `;

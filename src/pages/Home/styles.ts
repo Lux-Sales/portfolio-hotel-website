@@ -25,6 +25,21 @@ export const Attraction = styled.div`
     height: 50%;
     width: 50%;
   }
+
+  button {
+    width: 10vw;
+  }
+
+  @media only screen and (min-width: 1281px) {
+    img {
+      height: 30%;
+      width: 30%;
+    }
+    button {
+      height: 6vh;
+      font-size: 1vw;
+    }
+  }
 `;
 
 export const AttractionDetails = styled.div`
@@ -38,6 +53,13 @@ export const AttractionDetails = styled.div`
     align-items: left;
     p {
       margin: 5% 0;
+    }
+  }
+
+  @media only screen and (min-width: 1281px) {
+    padding: 0;
+    p {
+      font-size: 1vw;
     }
   }
 `;

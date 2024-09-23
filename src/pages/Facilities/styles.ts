@@ -15,6 +15,15 @@ export const Container = styled.div`
     text-align: center;
     margin: 3% 0;
   }
+
+  @media only screen and (min-width: 1281px) {
+    h1 {
+      font-size: 2vw;
+    }
+    p {
+      font-size: 1vw;
+    }
+  }
 `;
 
 export const FacilitiesList = styled.ul`
@@ -22,6 +31,9 @@ export const FacilitiesList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (min-width: 1281px) {
+    width: 50%;
+  }
 `;
 
 export const Facilitie = styled.li`
@@ -46,5 +58,6 @@ export const Facilitie = styled.li`
     text-transform: uppercase;
     background-color: #fff;
     font-size: 2vw;
+    white-space: nowrap;
   }
 `;

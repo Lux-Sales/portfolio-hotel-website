@@ -6,6 +6,9 @@ export const Container = styled.div`
     color: #f73737;
     font-weight: 500;
   }
+  @media only screen and (min-width: 1281px) {
+    margin-bottom: 10%;
+  }
 `;
 
 export const Header = styled.div`
@@ -18,6 +21,10 @@ export const Header = styled.div`
   text-transform: uppercase;
   font-weight: 700;
   font-size: 3.5vw;
+  @media only screen and (min-width: 1281px) {
+    height: 30vh;
+    font-size: 2vw;
+  }
 `;
 
 export const Section = styled.section`
@@ -71,6 +78,13 @@ export const Message = styled.div`
       font-size: 1vw;
     }
   }
+  @media only screen and (min-width: 1281px) {
+    form {
+      button {
+        height: 5vh;
+      }
+    }
+  }
 `;
 
 export const ContactInput = styled.div`
@@ -90,5 +104,14 @@ export const ContactInput = styled.div`
     height: 15vh;
     margin-bottom: 3%;
     border: 1px solid #587dc5;
+  }
+
+  @media only screen and (min-width: 1281px) {
+    input {
+      height: 5vh;
+    }
+    textarea {
+      height: 30vh;
+    }
   }
 `;
