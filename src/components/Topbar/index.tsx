@@ -4,7 +4,6 @@ import Logo from "@/assets/hotelLogo.svg";
 import { Link } from "react-router-dom";
 
 const Topbar = (): JSX.Element => {
-  const [selected, setSelected] = useState("/");
   return (
     <Container>
       <img
@@ -14,30 +13,40 @@ const Topbar = (): JSX.Element => {
       />
       <ButtonsNav>
         <Link
-          className={selected === "/" ? "activeLink" : ""}
           to="/"
-          onClick={() => setSelected("/")}
+          style={
+            location.pathname === "/" ? { textDecoration: "underline" } : {}
+          }
         >
           Home
         </Link>
         <Link
-          className={selected === "facilities" ? "activeLink" : ""}
           to="facilities"
-          onClick={() => setSelected("facilities")}
+          style={
+            location.pathname === "/facilities"
+              ? { textDecoration: "underline" }
+              : {}
+          }
         >
           Facilities
         </Link>
         <Link
-          className={selected === "rooms" ? "activeLink" : ""}
+          style={
+            location.pathname === "/rooms"
+              ? { textDecoration: "underline" }
+              : {}
+          }
           to="rooms"
-          onClick={() => setSelected("rooms")}
         >
           Rooms
         </Link>
         <Link
-          className={selected === "contact" ? "activeLink" : ""}
+          style={
+            location.pathname === "/contact"
+              ? { textDecoration: "underline" }
+              : {}
+          }
           to="contact"
-          onClick={() => setSelected("contact")}
         >
           Contact-us
         </Link>

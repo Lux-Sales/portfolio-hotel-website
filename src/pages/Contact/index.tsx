@@ -4,18 +4,17 @@ import {
   Header,
   Address,
   AddressMessage,
-  EmailInput,
   Message,
-  MessageInput,
-  NameInput,
   Section,
   Title,
+  ContactInput,
 } from "./styles";
-import { Field, ErrorMessage, Formik, Form, FormikValues } from "formik";
+import { Field, ErrorMessage, Formik, Form } from "formik";
 import * as yup from "yup";
 import MessageAPI, { MessageType } from "@/services/message";
 import Button from "@/components/Button";
 import { Link } from "react-router-dom";
+import EastIcon from "@mui/icons-material/East";
 
 const Contact = (): JSX.Element => {
   const validationSchema = yup.object().shape({
@@ -52,10 +51,11 @@ const Contact = (): JSX.Element => {
               CA 95673
             </p>
             <Link
+              target="_blank"
               to="https://maps.app.goo.gl/q9NmbMYdT55rz8wK9"
               data-testid="view-map-button"
             >
-              View Map
+              View Map <EastIcon />
             </Link>
             <span data-testid="contact-phone">Phone: +44 345 678 903</span>
             <span data-testid="contact-email">
@@ -70,39 +70,43 @@ const Contact = (): JSX.Element => {
             >
               {({ errors, touched }) => (
                 <Form>
-                  <label htmlFor="">Subscribe to our newsletter</label>
-                  <NameInput
-                    style={errors.email == null ? {} : { borderColor: "red" }}
+                  <ContactInput
+                    style={errors.name == null ? {} : { borderColor: "red" }}
                   >
+                    <label>Name</label>
                     <Field data-testid="name-input" type="text" name="name" />
-                  </NameInput>
-                  <span className="error-message">
-                    <ErrorMessage name="name" />
-                  </span>
-                  <EmailInput
+                    <span className="error-message">
+                      <ErrorMessage name="name" />
+                    </span>
+                  </ContactInput>
+                  <ContactInput
                     style={errors.email == null ? {} : { borderColor: "red" }}
                   >
+                    <label>Email</label>
                     <Field
                       data-testid="email-input"
                       type="email"
                       name="email"
                     />
-                  </EmailInput>
-                  <span className="error-message">
-                    <ErrorMessage name="email" />
-                  </span>
-                  <MessageInput
-                    style={errors.email == null ? {} : { borderColor: "red" }}
+                    <span className="error-message">
+                      <ErrorMessage name="email" />
+                    </span>
+                  </ContactInput>
+                  <ContactInput
+                    style={
+                      errors.message == null ? {} : { borderColor: "#fff" }
+                    }
                   >
+                    <label>Message</label>
                     <Field
                       data-testid="message-input"
-                      type="text"
+                      as="textarea"
                       name="message"
                     />
-                  </MessageInput>
-                  <span className="error-message">
-                    <ErrorMessage name="message" />
-                  </span>
+                    <span className="error-message">
+                      <ErrorMessage name="message" />
+                    </span>
+                  </ContactInput>
                   <Button text="Submit" type="submit" testid="submit-message" />
                 </Form>
               )}
