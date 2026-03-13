@@ -46,25 +46,18 @@ A aplicação foi construída com `Vite` para um desenvolvimento rápido, `React
 Siga os passos abaixo para rodar o projeto em seu ambiente de desenvolvimento local.
 
 1.  **Clone o repositório**
-    ```sh
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    ```
+    No terminal, execute o comando:
+    
+    `git clone https://github.com/Lux-Sales/portfolio-hotel-website.git`
 2.  **Instale as dependências**
     <p>Dentro do diretório do projeto, execute o comando:</p>
-    ```sh
-    yarn install
-    ```
+    <code>npm install</code> or <code>yarn</code>
 3.  **Inicie o servidor de desenvolvimento**
     <p>Este comando iniciará o servidor do Vite em modo de desenvolvimento.</p>
-    ```sh
-    yarn dev
-    ```
+    <code>yarn start</code>
 4.  **Crie a build de produção**
     <p>Para gerar os arquivos otimizados para produção, execute:</p>
-    ```sh
-    yarn build
-    ```
-
+    <code>yarn build</code>
 ---
 
 <h3 align="center">Happy hacking!</h3>
