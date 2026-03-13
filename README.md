@@ -4,7 +4,7 @@
     <strong>Um elegante site de hotel construído com as tecnologias mais modernas de front-end.</strong>
   </p>
   <p align="center">
-    <a href="https://luxury-hotel-portfolio.web.app/"target="blank"><strong>Acesse a demonstração ao vivo »</strong></a>
+    <a href="https://luxury-hotel-portfolio.web.app/"target="_blank"><strong>Acesse a demonstração ao vivo »</strong></a>
   </p>
   <br />
   <p align="center">
